@@ -1,8 +1,13 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import logo from '@/assets/logo.png';
+import LinksCC from '../linkscc/LinksCC';
+import { link } from 'fs/promises';
+
 const Navbar = () => {
+    
     return (
         <div className=" border-b border-gray-600" >
             <div className="container mx-auto navbar ">
@@ -14,22 +19,18 @@ const Navbar = () => {
                         <ul
                             tabIndex={-1}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-
-                            <li><a>Item 3</a></li>
+                             <LinksCC />
                         </ul>
                     </div>
                     <div className="flex items-center gap-1">
                         <Image src={logo} alt="Logo" width={32} height={32} />
-                        <Link href="/" className="btn btn-ghost text-xl">FITLOG</Link>
+                        <h1 className="text-xl font-bold text-white">FITLOG</h1>
                     </div>
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-
-                        <li><a>Item 3</a></li>
+                        <LinksCC />
                     </ul>
                 </div>
                 <div className="navbar-end">
