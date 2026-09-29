@@ -1,0 +1,119 @@
+import React from "react";
+import Image from "next/image";
+import { jimType } from "@/type/Type";
+interface PlanCardProps {
+    item: jimType;
+    onRemove?: (id: number) => void;
+}
+const PlanCard = ({ item }: PlanCardProps) => {
+    return (
+        <div className="flex w-full items-center gap-4 rounded-xl border border-slate-800 bg-[#15171c] p-3 text-white">
+
+            {/* Image */}
+            <div className=" shrink-0 overflow-hidden rounded-lg">
+                <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={100}
+                    height={64}
+                    className="object-cover"
+                />
+            </div>
+
+            {/* Workout Information */}
+            <div className="min-w-0 flex-1">
+
+                {/* Workout Name */}
+                <h2 className="truncate text-sm font-bold uppercase tracking-wide">
+                    {item.name}
+                </h2>
+
+                {/* Equipment */}
+                <p className="mt-0.5 text-xs text-slate-400">
+                    {item.equipment}
+                </p>
+
+                {/* Difficulty Label */}
+                <div className="mt-1.5">
+                    <span className="rounded-full bg-[#b7ff00] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-black">
+                        {item.difficulty}
+                    </span>
+                </div>
+
+                {/* Stats */}
+                <div className="mt-2 flex items-center gap-4 text-xs text-slate-300">
+
+                    {/* Duration */}
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-[#b7ff00]">
+                            ◷
+                        </span>
+
+                        <span>
+                            {item.duration} min
+                        </span>
+                    </div>
+
+                    {/* Calories */}
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-[#b7ff00]">
+                            ♨
+                        </span>
+
+                        <span>
+                            {item.caloriesBurned} kcal
+                        </span>
+                    </div>
+
+                    {/* Rating */}
+                    <div className="flex items-center gap-1.5">
+                        <span className="text-[#b7ff00]">
+                            ☆
+                        </span>
+
+                        <span>
+                            {item.rating}
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex shrink-0 items-center gap-3">
+
+               
+                <button
+                    type="button"
+                    className="rounded-full border border-slate-600 px-4 py-2 text-xs text-slate-200 transition hover:border-slate-400 hover:text-white"
+                >
+                    View Details
+                </button>
+
+                 
+                <button
+                    type="button"
+                    className="flex items-center gap-2 rounded-full bg-[#b7ff00] px-4 py-2 text-xs font-semibold text-black transition hover:bg-[#a8eb00]"
+                >
+                    <span className="text-sm">
+                        ✓
+                    </span>
+
+                    Mark as Done
+                </button>
+
+                 
+                <button
+                    type="button"
+                    // onClick={() => onRemove?.(item.id)}
+                    className="text-lg text-slate-500 transition hover:text-white"
+                >
+                    ×
+                </button>
+
+            </div>
+        </div>
+    );
+};
+
+export default PlanCard;
