@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import TodaysPlanBtn from '@/components/plandetails/TodaysPlanBtn';
+import SavedBtn from '@/components/plandetails/SavedBtn';
     const indivisualWorkout = async ({ params }: { params: Promise<{ id: string }> }) => {
     const { id } =await params;
     const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`)
@@ -166,24 +167,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
                              <TodaysPlanBtn plan={workout}></TodaysPlanBtn>
-                            
-
-                            {/* Save */}
-                            <button
-                                type="button"
-                                //onClick={() => setSaved(!saved)}
-                                className={`flex items-center justify-center gap-2 rounded-xl border px-6 py-3.5 text-sm font-medium transition active:scale-[0.98] ${
-                                    //   saved
-                                    //     ? "border-[#b8ff00] text-[#b8ff00]"
-                                    // : 
-                                    "border-[#30353e] text-gray-300 hover:border-gray-500"
-                                    }`}
-                            >
-                                
-                                 
-                                Save for later
-                                {/* {saved ? "Saved" : "Save for later"} */}
-                            </button>
+                             
+                            <SavedBtn plan={workout}></SavedBtn>
 
                         </div>
                     </div>

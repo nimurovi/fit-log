@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 
 
 const MyPlanPage = () => {
-        const { todaysPlan }: PlanContextType = useContext(PlanContext);
+        const { savedPlan, todaysPlan }: PlanContextType = useContext(PlanContext);
     
     return (
         <div>
@@ -14,7 +14,7 @@ const MyPlanPage = () => {
             </div>
             <div>
                 <h1>today plan:{todaysPlan.length}</h1>
-                
+                <h1>saved plan:{savedPlan.length}</h1>
             </div>
         </div>
     );
