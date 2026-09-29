@@ -1,6 +1,7 @@
 import React from 'react';
 import LibraryCard from '../shared/LibraryCard';
 import { jimType } from '@/type/Type';
+import Link from 'next/link';
 
 const libraryData = async () => {
     const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
@@ -15,7 +16,9 @@ const Library = async () => {
             <p>Twelve lifts covering every major muscle group.</p>
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-6">
                 {allLibData.map((item:jimType)=>(
-                    <LibraryCard key={item.id} item={item} />
+                    <Link key={item.id} href={`/workouts/${item.id}`}>
+                        <LibraryCard item={item} />
+                    </Link>
                 ))}
             </div>
         </div>
