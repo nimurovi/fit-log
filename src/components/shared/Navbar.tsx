@@ -34,22 +34,22 @@ const Navbar = () => {
                         <LinksCC />
                     </ul>
                 </div>
-                 
-                    <ul className="navbar-end hidden gap-4 lg:flex">
+
+                <ul className="navbar-end hidden gap-4 lg:flex">
 
 
-                        <li>
-                            <Link href="/myplan">
-                                Plan<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{todaysPlan.length}</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/myplan">
-                                Saved<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{savedPlan.length}</span>
-                            </Link>
-                        </li>
-                    </ul>
-                
+                    <li>
+                        <Link href="/myplan">
+                            Plan<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{todaysPlan.length}</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/myplan">
+                            Saved<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{savedPlan.length}</span>
+                        </Link>
+                    </li>
+                </ul>
+
             </div>
         </div>
     );

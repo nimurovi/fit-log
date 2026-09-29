@@ -8,10 +8,15 @@ type  SavedBtnProps = {
 
 const SavedBtn = ({ plan }: SavedBtnProps) => {
     const { savedPlan, setSavedPlan } = useContext(PlanContext);
+     
     const handleAddToSaved = () => {
-
-        setSavedPlan([...savedPlan, plan])
+        if (savedPlan.some((saved) => saved.id === plan.id)) {
+            return;
+        }    
+        setSavedPlan([...savedPlan, plan]);
+        
     }
+     
     return (
         <div>
             <button

@@ -8,10 +8,15 @@ type TodaysPlanBtnProps = {
 
 const TodaysPlanBtn = ({ plan }: TodaysPlanBtnProps) => {
     const { todaysPlan, setTodaysPlan } = useContext(PlanContext);
+     
     const handleAddToTodaysPlan = () => {
-
-        setTodaysPlan([...todaysPlan, plan])
+        if (todaysPlan.some((saved) => saved.id === plan.id)) {
+            return;
+        } 
+        setTodaysPlan([...todaysPlan, plan]);
+       
     }
+     
     return (
         <div>
             <button
