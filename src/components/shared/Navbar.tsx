@@ -1,13 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 
 import logo from '@/assets/logo.png';
 import LinksCC from '../linkscc/LinksCC';
-import { link } from 'fs/promises';
+import Link from 'next/link';
+import { PlanContext, PlanContextType } from '@/context/PlanContext';
 
 const Navbar = () => {
-    
+    const { savedPlan, todaysPlan }: PlanContextType = useContext(PlanContext);
     return (
         <div className=" border-b border-gray-600" >
             <div className="container mx-auto navbar ">
@@ -19,7 +20,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={-1}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                             <LinksCC />
+                            <LinksCC />
                         </ul>
                     </div>
                     <div className="flex items-center gap-1">
@@ -33,10 +34,22 @@ const Navbar = () => {
                         <LinksCC />
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">plan</a>
-                    <a className="btn">saved</a>
-                </div>
+                 
+                    <ul className="navbar-end hidden gap-4 lg:flex">
+
+
+                        <li>
+                            <Link href="/myplan">
+                                Plan<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{todaysPlan.length}</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/myplan">
+                                Saved<span className="ml-1 rounded-full bg-[#b8ff00] px-2 py-0.5 text-xs font-bold text-black">{savedPlan.length}</span>
+                            </Link>
+                        </li>
+                    </ul>
+                
             </div>
         </div>
     );
