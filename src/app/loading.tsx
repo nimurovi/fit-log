@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Loading = () => {
+const loading = () => {
     return (
         <div>
             loading...
@@ -8,4 +8,4 @@ const Loading = () => {
     );
 };
 
-export default Loading;
+export default loading;

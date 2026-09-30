@@ -17,7 +17,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             <div className="mx-auto max-w-7xl">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
 
-                    {/* ================= IMAGE ================= */}
+                    
                     <div className="overflow-hidden rounded-2xl">
                         <Image
                             src={workout.image}
@@ -28,20 +28,20 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                         />
                     </div>
 
-                    {/* ================= CONTENT ================= */}
+                    
                     <div className="flex flex-col justify-center">
 
-                        {/* Title */}
+                 
                         <h1 className="text-4xl font-black uppercase leading-tight tracking-tight sm:text-5xl">
                             {workout.name}
                         </h1>
 
-                        {/* Description */}
+                     
                         <p className="mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
                             {workout.description}
                         </p>
 
-                        {/* Muscle Groups */}
+                    
                         <div className="mt-5 flex flex-wrap gap-2">
                             {workout.muscleGroups?.map((muscle: string, index: number) => (
                                 <span
@@ -53,10 +53,10 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             ))}
                         </div>
 
-                        {/* ================= INFO TABLE ================= */}
+                        
                         <div className="mt-7 overflow-hidden rounded-2xl border border-[#242932] bg-[#15191f]">
 
-                            {/* Equipment */}
+                       
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Equipment
@@ -68,7 +68,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </div>
 
 
-                            {/* Difficulty */}
+                         
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Difficulty
@@ -80,7 +80,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </div>
 
 
-                            {/* Sets */}
+                         
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Sets
@@ -92,7 +92,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </div>
 
 
-                            {/* Reps */}
+                          
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Reps
@@ -104,7 +104,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </div>
 
 
-                            {/* Duration */}
+                           
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Duration
@@ -116,7 +116,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </div>
 
 
-                            {/* Calories */}
+                   
                             <div className="flex justify-between border-b border-[#242932] px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Calories
@@ -127,8 +127,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                                 </span>
                             </div>
 
-
-                            {/* Rating */}
+ 
                             <div className="flex justify-between px-5 py-4">
                                 <span className="text-xs font-bold uppercase text-gray-500">
                                     Rating
@@ -141,7 +140,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
                         </div>
 
-                        {/* ================= INSTRUCTIONS ================= */}
+                    
                         <div className="mt-8">
                             <h2 className="text-lg font-bold uppercase tracking-wide">
                                 Instructions
@@ -163,7 +162,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                             </ol>
                         </div>
 
-                        {/* ================= BUTTONS ================= */}
+                      
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
                              <TodaysPlanBtn plan={workout}></TodaysPlanBtn>
