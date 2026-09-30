@@ -1,5 +1,5 @@
  
-import React from 'react';
+ 
 import Image from 'next/image';
 import TodaysPlanBtn from '@/components/plandetails/TodaysPlanBtn';
 import SavedBtn from '@/components/plandetails/SavedBtn';
