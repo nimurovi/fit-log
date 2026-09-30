@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 interface MarkBtnProps { 
     activeTab: string;
 }
@@ -7,6 +8,9 @@ const MarkBtn = ({ activeTab }:MarkBtnProps) => {
     const [mark, setMark] = useState<boolean>(true);
     const handleMarkAsDone = () => {
         setMark(!mark);
+         
+        mark ? toast.success("Plan marked as  done!") :
+        toast.info("Plan marked as not done!");
     }
     return (
         <div>

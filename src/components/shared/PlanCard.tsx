@@ -10,17 +10,16 @@ interface PlanCardProps {
 }
 const PlanCard = ({ item, activeTab }: PlanCardProps) => {
     return (
-        <div className="flex w-full items-center gap-4 rounded-xl border border-slate-800 bg-[#15171c] p-3 text-white">
+        <div className="flex w-full flex-col gap-4 rounded-xl border border-slate-800 bg-[#15171c] p-3 text-white lg:flex-row lg:items-center">
 
             {/* Image */}
-            <div className=" shrink-0 overflow-hidden rounded-lg">
-                <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={100}
-                    height={64}
-                    className="object-cover"
-                />
+            <div className="h-40 w-full shrink-0 overflow-hidden rounded-lg sm:h-48 lg:h-16 lg:w-24">                <Image
+                src={item.image}
+                alt={item.name}
+                width={100}
+                height={64}
+                className="object-cover"
+            />
             </div>
 
             {/* Workout Information */}
@@ -44,8 +43,7 @@ const PlanCard = ({ item, activeTab }: PlanCardProps) => {
                 </div>
 
                 {/* Stats */}
-                <div className="mt-2 flex items-center gap-4 text-xs text-slate-300">
-
+                <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-300">
                     {/* Duration */}
                     <div className="flex items-center gap-1.5">
                         <span className="text-[#b7ff00]">
@@ -83,9 +81,8 @@ const PlanCard = ({ item, activeTab }: PlanCardProps) => {
             </div>
 
             {/* Buttons */}
-            <div className="flex shrink-0 items-center gap-3">
-
-                <Link href={`workouts/${item.id}`}>
+            <div className="flex w-full shrink-0 flex-wrap items-center gap-2 sm:gap-3 lg:w-auto lg:flex-nowrap">
+                <Link href={`/workouts/${item.id}`} className="flex-1 sm:flex-none">
                     <button
                         type="button"
                         className="rounded-full border border-slate-600 px-4 py-2 text-xs text-slate-200 transition hover:border-slate-400 hover:text-white"
@@ -94,7 +91,7 @@ const PlanCard = ({ item, activeTab }: PlanCardProps) => {
                     </button>
                 </Link>
 
-                <MarkBtn  activeTab={activeTab} />
+                <MarkBtn activeTab={activeTab} />
                 <RemoveBtn id={item.id} activeTab={activeTab} />
 
 

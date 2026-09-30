@@ -4,9 +4,7 @@ import { PlanContext, PlanContextType } from '@/context/PlanContext';
 import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { jimType } from '@/type/Type';
-interface MyPlanPageProps {
-    plan: jimType[];
-}
+ 
 
 const MyPlanPage = () => {
     const { savedPlan, todaysPlan }: PlanContextType = useContext(PlanContext);

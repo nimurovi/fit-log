@@ -2,6 +2,7 @@
 import { PlanContext } from '@/context/PlanContext';
 import { jimType } from '@/type/Type';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 type TodaysPlanBtnProps = {
     plan: jimType;
 };
@@ -11,10 +12,13 @@ const TodaysPlanBtn = ({ plan }: TodaysPlanBtnProps) => {
      
     const handleAddToTodaysPlan = () => {
         if (todaysPlan.some((saved) => saved.id === plan.id)) {
+            toast.info("Plan already added to today's plan!")
             return;
         } 
-        setTodaysPlan([...todaysPlan, plan]);
-       
+        else{
+            setTodaysPlan([...todaysPlan, plan]);
+            toast.success("Plan added to today's plan!")
+        }
     }
      
     return (

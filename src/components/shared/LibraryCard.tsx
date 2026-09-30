@@ -1,4 +1,7 @@
 import React from 'react';
+import { CiTimer,CiStar } from "react-icons/ci";
+import { FaFire } from "react-icons/fa";
+ 
 import { jimType } from '@/type/Type';
 import Image from 'next/image';
 interface LibraryCardProps {
@@ -55,19 +58,19 @@ const LibraryCard = ({ item }: LibraryCardProps) => {
 
                     {/* Duration */}
                     <div className="flex items-center gap-2">
-                         
+                        <CiTimer />
                         <span>{item.duration} min</span>
                     </div>
 
                     {/* Calories */}
                     <div className="flex items-center gap-2">
-                         
+                        <FaFire />
                         <span>{item.caloriesBurned} kcal</span>
                     </div>
 
                     {/* Rating */}
                     <div className="flex items-center gap-2">
-                     
+                        <CiStar />
                         <span>{item.rating}</span>
                     </div>
 
