@@ -2,8 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { jimType } from "@/type/Type";
 import RemoveBtn from "../plandetails/RemoveBtn";
+import Link from "next/link";
+import MarkBtn from "../plandetails/MarkBtn";
 interface PlanCardProps {
-    item: jimType; 
+    item: jimType;
     activeTab: string;
 }
 const PlanCard = ({ item, activeTab }: PlanCardProps) => {
@@ -83,28 +85,18 @@ const PlanCard = ({ item, activeTab }: PlanCardProps) => {
             {/* Buttons */}
             <div className="flex shrink-0 items-center gap-3">
 
+                <Link href={`workouts/${item.id}`}>
+                    <button
+                        type="button"
+                        className="rounded-full border border-slate-600 px-4 py-2 text-xs text-slate-200 transition hover:border-slate-400 hover:text-white"
+                    >
+                        View Details
+                    </button>
+                </Link>
 
-                <button
-                    type="button"
-                    className="rounded-full border border-slate-600 px-4 py-2 text-xs text-slate-200 transition hover:border-slate-400 hover:text-white"
-                >
-                    View Details
-                </button>
-
-
-                <button
-                    type="button"
-                    className={`flex items-center gap-2 rounded-full bg-[#b7ff00] px-4 py-2 text-xs font-semibold text-black transition hover:bg-[#a8eb00] ${activeTab === 'todaysPlan' ? 'visible' : 'hidden'}`}
-                >
-                    <span className="text-sm">
-                        ✓
-                    </span>
-
-                    Mark as Done
-                </button>
-
+                <MarkBtn  activeTab={activeTab} />
                 <RemoveBtn id={item.id} activeTab={activeTab} />
-                
+
 
             </div>
         </div>
