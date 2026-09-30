@@ -2,7 +2,7 @@
 import PlanCard from '@/components/shared/PlanCard';
 import { PlanContext, PlanContextType } from '@/context/PlanContext';
 import React, { useContext, useState } from 'react';
-
+import Link from 'next/link';
 
 const MyPlanPage = () => {
     const { savedPlan, todaysPlan }: PlanContextType = useContext(PlanContext);
@@ -42,7 +42,7 @@ const MyPlanPage = () => {
                             todaysPlan.map((plan) => (
 
                                 <div key={plan.id} className="mb-4">
-                                    <PlanCard item={plan} />
+                                    <PlanCard activeTab={activeTab} item={plan} />
                                 </div>
                             ))
                         ) :
@@ -50,7 +50,9 @@ const MyPlanPage = () => {
                             <div className="flex flex-col items-center justify-center gap-4 p-4 text-center">
                                 <h1 className='text-2xl font-bold'>NOTHING HERE YET</h1>
                                 <p>Browse the library and add a lift to get today moving.</p>
-                                <button className="btn  rounded-full bg-[#b8ff00] text-black">Go to workouts</button>
+                                <Link href="/workouts">
+                                    <button className="btn  rounded-full bg-[#b8ff00] text-black">Go to workouts</button>
+                                </Link>
                             </div>
                         }
                     </div>
@@ -62,12 +64,14 @@ const MyPlanPage = () => {
                                 <div className="flex flex-col items-center justify-center gap-4 p-4 text-center">
                                     <h1 className='text-2xl font-bold'>NOTHING HERE YET</h1>
                                     <p>Browse the library and add a lift to get today moving.</p>
-                                    <button className="btn  rounded-full bg-[#b8ff00] text-black">Go to workouts</button>
+                                    <Link href="/workouts">
+                                        <button className="btn  rounded-full bg-[#b8ff00] text-black">Go to workouts</button>
+                                    </Link>
                                 </div>
                             ) :
                                 savedPlan.map((plan) => (
                                     <div key={plan.id} className="mb-4">
-                                        <PlanCard item={plan} />
+                                        <PlanCard activeTab={activeTab} item={plan} />
                                     </div>
                                 ))
                         }

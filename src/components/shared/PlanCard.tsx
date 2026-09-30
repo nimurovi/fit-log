@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { jimType } from "@/type/Type";
+import RemoveBtn from "../plandetails/RemoveBtn";
 interface PlanCardProps {
-    item: jimType;
-    onRemove?: (id: number) => void;
+    item: jimType; 
+    activeTab: string;
 }
-const PlanCard = ({ item }: PlanCardProps) => {
+const PlanCard = ({ item, activeTab }: PlanCardProps) => {
     return (
         <div className="flex w-full items-center gap-4 rounded-xl border border-slate-800 bg-[#15171c] p-3 text-white">
 
@@ -82,7 +83,7 @@ const PlanCard = ({ item }: PlanCardProps) => {
             {/* Buttons */}
             <div className="flex shrink-0 items-center gap-3">
 
-               
+
                 <button
                     type="button"
                     className="rounded-full border border-slate-600 px-4 py-2 text-xs text-slate-200 transition hover:border-slate-400 hover:text-white"
@@ -90,10 +91,10 @@ const PlanCard = ({ item }: PlanCardProps) => {
                     View Details
                 </button>
 
-                 
+
                 <button
                     type="button"
-                    className="flex items-center gap-2 rounded-full bg-[#b7ff00] px-4 py-2 text-xs font-semibold text-black transition hover:bg-[#a8eb00]"
+                    className={`flex items-center gap-2 rounded-full bg-[#b7ff00] px-4 py-2 text-xs font-semibold text-black transition hover:bg-[#a8eb00] ${activeTab === 'todaysPlan' ? 'visible' : 'hidden'}`}
                 >
                     <span className="text-sm">
                         ✓
@@ -102,14 +103,8 @@ const PlanCard = ({ item }: PlanCardProps) => {
                     Mark as Done
                 </button>
 
-                 
-                <button
-                    type="button"
-                    // onClick={() => onRemove?.(item.id)}
-                    className="text-lg text-slate-500 transition hover:text-white"
-                >
-                    ×
-                </button>
+                <RemoveBtn id={item.id} activeTab={activeTab} />
+                
 
             </div>
         </div>
