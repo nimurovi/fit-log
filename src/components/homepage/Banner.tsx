@@ -2,14 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import bannerImage from '@/assets/banner.png';
 const Banner = () => {
-     
+
     return (
         <section className="  px-6 py-10">
             <div className="container mx-auto  ">
 
-                <div className="flex   items-center justify-between overflow-hidden rounded-2xl border border-[#252830] bg-[#15171c] px-8 py-10 md:px-12 lg:px-14">
+                <div className="flex flex-col items-center justify-between gap-8 overflow-hidden rounded-2xl border border-[#252830] bg-[#15171c] px-6 py-8 md:flex-row md:px-12 md:py-10 lg:px-14">
 
-                    
                     <div className="max-w-2xl">
 
                         <p className="mb-5 text-sm font-bold tracking-[0.15em] text-lime-400">
@@ -39,14 +38,14 @@ const Banner = () => {
 
 
                     {/* Right Image */}
-                    <div className="hidden   items-center justify-center md:flex">
+                    <div className=" items-center justify-center md:flex">
                         <Image
                             src={bannerImage}
                             alt="Banner Image"
                             width={400}
                             height={400}
                             className="rounded-lg object-cover"
-                        /> 
+                        />
                     </div>
 
                 </div>
@@ -56,7 +55,7 @@ const Banner = () => {
     );
 };
 
- 
- 
+
+
 
 export default Banner;
